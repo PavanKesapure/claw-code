@@ -1,0 +1,10 @@
+[2m2026-07-10T06:01:01.913691Z[0m [32m INFO[0m [2mrecruitment_system[0m[2m:[0m 🚀 AgentRecruit server starting on http://localhost:3000
+[2m2026-07-10T06:13:12.157294Z[0m [32m INFO[0m [2mrecruitment_system[0m[2m:[0m Running agent research for opening: a27ee635-7a9c-4787-92ad-40d2bfb22280
+[2m2026-07-10T06:13:12.158536Z[0m [32m INFO[0m [2mrecruitment_system::agents[0m[2m:[0m Starting research for opening a27ee635-7a9c-4787-92ad-40d2bfb22280
+[2m2026-07-10T06:13:12.172386Z[0m [32m INFO[0m [2mrecruitment_system::agents[0m[2m:[0m Phase 1: Searching for candidates...
+[2m2026-07-10T06:13:12.172962Z[0m [32m INFO[0m [2mrecruitment_system::agents[0m[2m:[0m DuckDuckGo query: site:linkedin.com/in "Senior software engineer" Rust script react
+[2m2026-07-10T06:13:13.380975Z[0m [32m INFO[0m [2mrecruitment_system::agents[0m[2m:[0m DuckDuckGo returned 9 LinkedIn profiles
+[2m2026-07-10T06:13:13.381061Z[0m [32m INFO[0m [2mrecruitment_system::agents[0m[2m:[0m Supplementing with 41 synthetic candidates (source: DuckDuckGo)
+[2m2026-07-10T06:13:13.467180Z[0m [32m INFO[0m [2mrecruitment_system::agents[0m[2m:[0m Phase 2: Analyzing and ranking 50 candidates...
+[2m2026-07-10T06:13:13.522335Z[0m [32m INFO[0m [2mrecruitment_system::agents[0m[2m:[0m Research complete. Added 50 candidates.
+[2m2026-07-10T06:13:13.522948Z[0m [32m INFO[0m [2mrecruitment_system[0m[2m:[0m Complete: 50 candidates found

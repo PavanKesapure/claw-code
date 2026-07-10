@@ -1,27 +1,22 @@
 [
   {
-    "content": "Architecture & dependency analysis",
-    "activeForm": "Complete",
-    "status": "completed"
-  },
-  {
-    "content": "Runtime crate deep analysis",
-    "activeForm": "Complete",
-    "status": "completed"
-  },
-  {
-    "content": "CLI & Tools analysis",
-    "activeForm": "Complete",
-    "status": "completed"
-  },
-  {
-    "content": "Code quality verification",
-    "activeForm": "Complete",
-    "status": "completed"
-  },
-  {
-    "content": "Synthesize findings into unified report",
-    "activeForm": "Writing report",
+    "content": "Add DuckDuckGo scraping + improve real search in agents.rs",
+    "activeForm": "agents.rs",
     "status": "in_progress"
+  },
+  {
+    "content": "Change run_research calls to use true for real search",
+    "activeForm": "main.rs",
+    "status": "pending"
+  },
+  {
+    "content": "Add source badge in candidate display",
+    "activeForm": "templates.rs",
+    "status": "pending"
+  },
+  {
+    "content": "Add search_source field or use existing source field",
+    "activeForm": "models.rs",
+    "status": "pending"
   }
 ]
