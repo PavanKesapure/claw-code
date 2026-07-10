@@ -14,3 +14,9 @@ status-help.txt
 # Legacy Python port session scratch artifacts
 .port_sessions/
 .github/workflows/
+
+rust/crates/recruitment-system/
+rust/recruitment.db
+rust/recruitment.db-shm
+rust/recruitment.db-wal
+rust/server.log
