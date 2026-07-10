@@ -1,56 +1,5 @@
 # Claw Code
 
-<p align="center">
-  <a href="https://github.com/code-yeongyu/lazycodex">
-    <img src="https://img.shields.io/badge/LazyCodex-codex%20for%20no--brainers-111111?style=for-the-badge&logo=github&logoColor=white" alt="LazyCodex banner" />
-  </a>
-  <a href="https://github.com/Yeachan-Heo/gajae-code">
-    <img src="https://img.shields.io/badge/Gajae--Code-red--claw%20agent%20harness-B22222?style=for-the-badge&logo=github&logoColor=white" alt="Gajae-Code banner" />
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/code-yeongyu/lazycodex">
-    <img src="https://opengraph.githubassets.com/lazycodex-card/code-yeongyu/lazycodex" alt="LazyCodex GitHub card" width="280" />
-  </a>
-  <a href="https://github.com/Yeachan-Heo/gajae-code">
-    <img src="https://opengraph.githubassets.com/gajae-code-card/Yeachan-Heo/gajae-code" alt="Gajae-Code GitHub card" width="280" />
-  </a>
-</p>
-
-<h3 align="center">start with the real crab-powered harnesses</h3>
-
-<p align="center">
-  <a href="https://github.com/code-yeongyu/lazycodex"><b>github.com/code-yeongyu/lazycodex</b></a>
-  <br/>
-  <a href="https://github.com/Yeachan-Heo/gajae-code"><b>github.com/Yeachan-Heo/gajae-code</b></a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/code-yeongyu/lazycodex">
-    <img src="https://img.shields.io/badge/Open-LazyCodex-111111?style=flat-square&logo=github&logoColor=white" alt="Open LazyCodex on GitHub" />
-  </a>
-  <a href="https://github.com/Yeachan-Heo/gajae-code">
-    <img src="https://img.shields.io/badge/Open-Gajae--Code-B22222?style=flat-square&logo=github&logoColor=white" alt="Open Gajae-Code on GitHub" />
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://discord.gg/GtjhvgjnV">
-    <img src="https://img.shields.io/badge/Discord-join%20the%20harness%20lab-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Join the harness lab on Discord" />
-  </a>
-  <a href="https://discord.gg/4Rt79F7dF">
-    <img src="https://img.shields.io/badge/Discord-join%20the%20crab%20tank-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Join the crab tank on Discord" />
-  </a>
-</p>
-
-<p align="center">
-  Join the Discords:
-  <a href="https://discord.gg/GtjhvgjnV"><b>ultraworkers discord</b></a>
-  ·
-  <a href="https://discord.gg/4Rt79F7dF"><b>gajae-code discord</b></a>
-</p>
-
 > [!IMPORTANT]
 > **Claw Code is not the serious production project here.**
 > This repository is closer to a museum exhibit than a product pitch, a crustacean-run artifact kept alive by clawed gajaes, swept and labeled by agents, and automatically maintained according to the harnesses above.
@@ -62,7 +11,7 @@
 > For the longer public explanation behind this philosophy, see [here](https://x.com/realsigridjin/status/2039472968624185713).
 
 <p align="center">
-  <a href="https://github.com/ultraworkers/claw-code">ultraworkers/claw-code</a>
+  <a href="https://github.com/PavanKesapure/claw-code">PavanKesapure/claw-code</a>
   ·
   <a href="./USAGE.md">Usage</a>
   ·
@@ -79,22 +28,8 @@
   <a href="https://discord.gg/5TUQKqFWd">UltraWorkers Discord</a>
 </p>
 
-<p align="center">
-  <a href="https://star-history.com/#ultraworkers/claw-code&Date">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ultraworkers/claw-code&type=Date&theme=dark" />
-      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ultraworkers/claw-code&type=Date" />
-      <img alt="Star history for ultraworkers/claw-code" src="https://api.star-history.com/svg?repos=ultraworkers/claw-code&type=Date" width="600" />
-    </picture>
-  </a>
-</p>
-
-<p align="center">
-  <img src="assets/claw-hero.jpeg" alt="Claw Code" width="300" />
-</p>
-
 Claw Code is the public Rust implementation of the `claw` CLI agent harness.
-The canonical implementation lives in [`rust/`](./rust), and the current source of truth for this repository is **ultraworkers/claw-code**.
+The canonical implementation lives in [`rust/`](./rust), and the original upstream source is **ultraworkers/claw-code**, maintained by **PavanKesapure/claw-code**.
 
 > [!IMPORTANT]
 > Start with [`USAGE.md`](./USAGE.md) for build, auth, CLI, session, and parity-harness workflows. For file submission/navigation questions, see [Navigation and file context](./docs/navigation-file-context.md). For local OpenAI-compatible models and offline skill installs, see [Local OpenAI-compatible providers and skills setup](./docs/local-openai-compatible-providers.md). Windows users can jump to the PowerShell-first [Windows install and release quickstart](./docs/windows-install-release.md). Make `claw doctor` your first health check after building, use [`rust/README.md`](./rust/README.md) for crate-level details, read [`PARITY.md`](./PARITY.md) for the current Rust-port checkpoint, and see [`docs/container.md`](./docs/container.md) for the container-first workflow.
@@ -129,7 +64,7 @@ cd claw-code/rust
 cargo build --workspace
 
 # ===== STEP 5: Set API Key =====
-$env:ANTHROPIC_API_KEY = "sk-ant-..."
+$env:OPENCODE_API_KEY = "sk-ant-..."
 
 # ===== STEP 6: Run =====
 .\target\debug\claw.exe prompt "say hello"
@@ -153,7 +88,7 @@ cd claw-code/rust
 cargo build --workspace   # 5-10 min ☕
 
 # ===== STEP 4: Set API Key & Run =====
-export ANTHROPIC_API_KEY="sk-ant-..."
+export OPENCODE_API_KEY="sk-ant-..."
 ./target/debug/claw prompt "say hello"
 ```
 
@@ -174,7 +109,7 @@ cd claw-code/rust
 cargo build --workspace
 
 # ===== STEP 3: Run =====
-export ANTHROPIC_API_KEY="sk-ant-..."
+export OPENCODE_API_KEY="sk-ant-..."
 ./target/debug/claw prompt "say hello"
 ```
 
@@ -197,7 +132,7 @@ cd claw-code/rust
 cargo build --workspace   # 15-20 min ☕
 
 # ===== STEP 3: Run =====
-export ANTHROPIC_API_KEY="sk-ant-..."
+export OPENCODE_API_KEY="sk-ant-..."
 ./target/debug/claw prompt "say hello"
 ```
 
@@ -236,16 +171,16 @@ export ANTHROPIC_API_KEY="sk-ant-..."
 > ```bash
 > cargo install agent-code   # upstream binary — installs 'agent.exe' (Windows) / 'agent' (Unix), NOT 'agent-code'
 > ```
-> This repo (`ultraworkers/claw-code`) is **build-from-source only** — follow the steps below.
+> This repo (`PavanKesapure/claw-code`) is **build-from-source only** — follow the steps below.
 
 ```bash
 # 1. Clone and build
-git clone https://github.com/ultraworkers/claw-code
+git clone https://github.com/PavanKesapure/claw-code
 cd claw-code/rust
 cargo build --workspace
 
 # 2. Set your API key (Anthropic API key — not a Claude subscription)
-export ANTHROPIC_API_KEY="sk-ant-..."
+export OPENCODE_API_KEY="sk-ant-..."
 
 # 3. Verify everything is wired correctly
 ./target/debug/claw doctor
@@ -272,13 +207,13 @@ export ANTHROPIC_API_KEY="sk-ant-..."
    If this fails, reopen your terminal or run the PATH setup from the Rust installer output, then retry.
 3. **Clone and build** (works in PowerShell, Git Bash, or WSL):
    ```powershell
-   git clone https://github.com/ultraworkers/claw-code
+   git clone https://github.com/PavanKesapure/claw-code
    cd claw-code/rust
    cargo build --workspace
    ```
 4. **Run** (PowerShell — note `.exe` and backslash):
    ```powershell
-   $env:ANTHROPIC_API_KEY = "sk-ant-..."
+   $env:OPENCODE_API_KEY = "sk-ant-..."
    .\target\debug\claw.exe prompt "say hello"
    ```
 
@@ -323,7 +258,7 @@ PowerShell smoke commands that do not require live credentials:
 ```powershell
 $env:CLAW_CONFIG_HOME = Join-Path $env:TEMP "claw config home"
 New-Item -ItemType Directory -Force -Path $env:CLAW_CONFIG_HOME | Out-Null
-Remove-Item Env:\ANTHROPIC_API_KEY, Env:\ANTHROPIC_AUTH_TOKEN, Env:\OPENAI_API_KEY -ErrorAction SilentlyContinue
+Remove-Item Env:\OPENCODE_API_KEY, Env:\ANTHROPIC_AUTH_TOKEN, Env:\OPENAI_API_KEY -ErrorAction SilentlyContinue
 .\rust\target\debug\claw.exe help
 .\rust\target\debug\claw.exe status
 .\rust\target\debug\claw.exe config env
@@ -376,7 +311,7 @@ claw --help
 - **Debug vs. release** — If the build is slow, you're in debug mode (default). Add `--release` to `cargo build` for faster runtime, but the build itself will take 5–10 minutes.
 
 > [!NOTE]
-> **Auth:** claw requires an **API key** (`ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, etc.) — Claude subscription login is not a supported auth path.
+> **Auth:** claw requires an **API key** (`OPENCODE_API_KEY`, `OPENAI_API_KEY`, etc.) — Claude subscription login is not a supported auth path.
 
 Run the workspace test suite after verifying the binary works:
 
