@@ -39,7 +39,7 @@ The canonical implementation lives in [`rust/`](./rust), and the original upstre
 ---
 ## 📦 Installation Guide (for everyone — no coding experience needed!)
 
-Yeh guide aapko **Claw Code** install karne mein step-by-step help karega — chahe aap Windows, Mac, Linux ya Android (Termux) use kar rahe ho. Kisi coding background ki zaroorat nahi hai!
+Yeh guide aapko **Claw Code** install karne mein step-by-step help karega. Sirf **Windows** aur **Android (Termux)** ke liye instructions hain. Kisi coding background ki zaroorat nahi hai!
 
 ### 🪟 Windows
 
@@ -63,54 +63,8 @@ cd claw-code/rust
 # Ye 5-10 minute lega (chai le aao ☕)
 cargo build --workspace
 
-# ===== STEP 5: Set API Key =====
-$env:OPENCODE_API_KEY = "sk-ant-..."
-
-# ===== STEP 6: Run =====
+# ===== STEP 5: Run =====
 .\target\debug\claw.exe prompt "say hello"
-```
-
----
-
-### 🍎 macOS
-
-```bash
-# ===== STEP 1: Install Rust =====
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-# "1" type karo aur Enter maro, phir terminal band/fir se kholo
-
-# ===== STEP 2: Verify =====
-cargo --version
-
-# ===== STEP 3: Clone & Build =====
-git clone https://github.com/PavanKesapure/claw-code
-cd claw-code/rust
-cargo build --workspace   # 5-10 min ☕
-
-# ===== STEP 4: Set API Key & Run =====
-export OPENCODE_API_KEY="sk-ant-..."
-./target/debug/claw prompt "say hello"
-```
-
----
-
-### 🐧 Linux (Ubuntu/Debian)
-
-```bash
-# ===== STEP 1: Install deps + Rust =====
-sudo apt update && sudo apt install -y curl git build-essential
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source "$HOME/.cargo/env"
-cargo --version
-
-# ===== STEP 2: Clone & Build =====
-git clone https://github.com/PavanKesapure/claw-code
-cd claw-code/rust
-cargo build --workspace
-
-# ===== STEP 3: Run =====
-export OPENCODE_API_KEY="sk-ant-..."
-./target/debug/claw prompt "say hello"
 ```
 
 ---
@@ -132,13 +86,93 @@ cd claw-code/rust
 cargo build --workspace   # 15-20 min ☕
 
 # ===== STEP 3: Run =====
-export OPENCODE_API_KEY="sk-ant-..."
 ./target/debug/claw prompt "say hello"
 ```
 
 ---
 
-### ✅ After Installation (All OS)
+### ✅ After Installation — OpenCode Free API Setup (All OS)
+
+Claw Code ab **OpenCode** ke free models ke saath aata hai! Aapko kisi paid API ki zaroorat nahi.
+
+#### Step 1: OpenCode install karo
+
+**Windows (PowerShell):**
+```powershell
+winget install OpenCode.app
+```
+
+**Android (Termux):**
+```bash
+cargo install opencode
+```
+
+Ya fir manually download karo: https://github.com/opencode-ai/opencode/releases
+
+#### Step 2: OpenCode providers file create karo
+
+File banao: `~/.opencode/providers.json` (ya Windows mein `%USERPROFILE%\.opencode\providers.json`)
+
+Isme ye content daalo:
+
+```json
+{
+  "free-coding-models": {
+    "base_url": "https://free.opencode.ai",
+    "models": [
+      { "id": "deepseek-v4-flash-free", "name": "DeepSeek V4 Flash (Free)", "provider": "opencode-free" },
+      { "id": "llama-3.3-70b-free", "name": "Llama 3.3 70B (Free)", "provider": "opencode-free" },
+      { "id": "qwen-2.5-72b-free", "name": "Qwen 2.5 72B (Free)", "provider": "opencode-free" }
+    ]
+  }
+}
+```
+
+#### Step 3: OpenCode config create karo
+
+File banao: `~/.opencode.json` (ya Windows mein `%USERPROFILE%\.opencode.json`)
+
+```json
+{
+  "providers": {
+    "free-coding-models": {
+      "api_key": "free"
+    }
+  },
+  "default_provider": "free-coding-models",
+  "default_model": "deepseek-v4-flash-free"
+}
+```
+
+#### Step 4: Claw Code config set karo
+
+**Windows (PowerShell):**
+```powershell
+$env:OPENCODE_API_KEY = "free"
+$env:OPENCODE_BASE_URL = "https://free.opencode.ai"
+```
+
+**Android (Termux):**
+```bash
+export OPENCODE_API_KEY="free"
+export OPENCODE_BASE_URL="https://free.opencode.ai"
+```
+
+Ya aap sidha `opencode.json` bana sakte ho apne project mein (claw-code/rust/ folder mein):
+
+```json
+{
+  "providers": {
+    "free-coding-models": {
+      "api_key": "free"
+    }
+  },
+  "default_provider": "free-coding-models",
+  "default_model": "deepseek-v4-flash-free"
+}
+```
+
+#### Step 5: Verify
 
 ```bash
 ./target/debug/claw doctor     # Health check
@@ -147,11 +181,8 @@ export OPENCODE_API_KEY="sk-ant-..."
 ```
 
 > [!TIP]
-> **API Key nahi hai?**
-> 1. https://console.anthropic.com/ par jao
-> 2. Sign up / Login karo → "API Keys" section mein jaao
-> 3. "Create Key" click karo → key copy karo (sk-ant-... se shuru)
-> 4. Upar STEP 5 mein yeh key paste karo
+> **Free models ki list:** https://github.com/opencode-ai/opencode/blob/main/docs/providers.md
+> Naye models aate rahte hain! Kabhi command chalate time `model` change kar sakte ho.
 
 ---
 ## Current repository shape
