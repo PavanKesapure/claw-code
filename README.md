@@ -101,6 +101,124 @@ The canonical implementation lives in [`rust/`](./rust), and the current source 
 >
 > **ACP / Zed status:** `claw-code` does not ship an ACP/Zed daemon or JSON-RPC entrypoint yet. Run `claw acp` (or `claw --acp`) for the current status instead of guessing from source layout; `claw acp serve` is currently a discoverability alias only, returns status with exit code 0, and real ACP support remains tracked separately in `ROADMAP.md`. For the public JSON contract, see [`docs/g011-acp-json-rpc-status-contract.md`](./docs/g011-acp-json-rpc-status-contract.md).
 
+---
+## 📦 Installation Guide (for everyone — no coding experience needed!)
+
+Yeh guide aapko **Claw Code** install karne mein step-by-step help karega — chahe aap Windows, Mac, Linux ya Android (Termux) use kar rahe ho. Kisi coding background ki zaroorat nahi hai!
+
+### 🪟 Windows
+
+```powershell
+# ===== STEP 1: Install Rust =====
+# 1. Website kholo: https://rustup.rs/
+# 2. "DOWNLOAD RUSTUP-INIT.EXE" button par click karo
+# 3. Download hui file ko Open/Double-click karo
+# 4. Jab terminal khule to option "1" select karo aur Enter maro
+# 5. Terminal band karo aur naya terminal kholo
+
+# ===== STEP 2: Verify Rust installed =====
+cargo --version
+# Agar version number dikhe to Rust install ho gaya! ✅
+
+# ===== STEP 3: Clone Claw Code =====
+git clone https://github.com/PavanKesapure/claw-code
+cd claw-code/rust
+
+# ===== STEP 4: Build =====
+# Ye 5-10 minute lega (chai le aao ☕)
+cargo build --workspace
+
+# ===== STEP 5: Set API Key =====
+$env:ANTHROPIC_API_KEY = "sk-ant-..."
+
+# ===== STEP 6: Run =====
+.\target\debug\claw.exe prompt "say hello"
+```
+
+---
+
+### 🍎 macOS
+
+```bash
+# ===== STEP 1: Install Rust =====
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# "1" type karo aur Enter maro, phir terminal band/fir se kholo
+
+# ===== STEP 2: Verify =====
+cargo --version
+
+# ===== STEP 3: Clone & Build =====
+git clone https://github.com/PavanKesapure/claw-code
+cd claw-code/rust
+cargo build --workspace   # 5-10 min ☕
+
+# ===== STEP 4: Set API Key & Run =====
+export ANTHROPIC_API_KEY="sk-ant-..."
+./target/debug/claw prompt "say hello"
+```
+
+---
+
+### 🐧 Linux (Ubuntu/Debian)
+
+```bash
+# ===== STEP 1: Install deps + Rust =====
+sudo apt update && sudo apt install -y curl git build-essential
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source "$HOME/.cargo/env"
+cargo --version
+
+# ===== STEP 2: Clone & Build =====
+git clone https://github.com/PavanKesapure/claw-code
+cd claw-code/rust
+cargo build --workspace
+
+# ===== STEP 3: Run =====
+export ANTHROPIC_API_KEY="sk-ant-..."
+./target/debug/claw prompt "say hello"
+```
+
+---
+
+### 📱 Android (Termux)
+
+> **Pehle Termux install karo:** F-Droid se (Play Store wala kaam nahi karta)
+> 1. F-Droid app install karo: https://f-droid.org/
+> 2. F-Droid mein jaake "Termux" search karo aur install karo
+
+```bash
+# ===== STEP 1: Termux setup =====
+pkg update -y && pkg upgrade -y
+pkg install -y rust git curl build-essential
+
+# ===== STEP 2: Clone & Build =====
+git clone https://github.com/PavanKesapure/claw-code
+cd claw-code/rust
+cargo build --workspace   # 15-20 min ☕
+
+# ===== STEP 3: Run =====
+export ANTHROPIC_API_KEY="sk-ant-..."
+./target/debug/claw prompt "say hello"
+```
+
+---
+
+### ✅ After Installation (All OS)
+
+```bash
+./target/debug/claw doctor     # Health check
+./target/debug/claw             # Interactive session
+./target/debug/claw --help      # Help
+```
+
+> [!TIP]
+> **API Key nahi hai?**
+> 1. https://console.anthropic.com/ par jao
+> 2. Sign up / Login karo → "API Keys" section mein jaao
+> 3. "Create Key" click karo → key copy karo (sk-ant-... se shuru)
+> 4. Upar STEP 5 mein yeh key paste karo
+
+---
 ## Current repository shape
 
 - **`rust/`** — canonical Rust workspace and the `claw` CLI binary
